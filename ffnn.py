@@ -176,7 +176,7 @@ if __name__ == "__main__":
         print("Training completed for epoch {}".format(epoch + 1))
         print("Training accuracy for epoch {}: {}".format(epoch + 1, correct / total))
         print("Training loss for epoch {}: {}".format(epoch + 1, loss))
-        # print("Training time for this epoch: {}".format(time.time() - start_time))
+        print("Training time for this epoch: {}".format(time.time() - start_time))
 
 
         loss = None
@@ -204,7 +204,7 @@ if __name__ == "__main__":
         print("Validation completed for epoch {}".format(epoch + 1))
         print("Validation accuracy for epoch {}: {}".format(epoch + 1, correct / total))
         print("Validation loss for epoch {}: {}".format(epoch + 1, loss))
-        # print("Validation time for this epoch: {}".format(time.time() - start_time))
+        print("Validation time for this epoch: {}".format(time.time() - start_time))
 
 
     print("\n========== Testing ==========")

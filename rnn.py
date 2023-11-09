@@ -108,6 +108,7 @@ if __name__ == "__main__":
         random.shuffle(train_data)
         model.train()
         # You will need further code to operationalize training, ffnn.py may be helpful
+        start_time = time.time()
         print("Training started for epoch {}".format(epoch + 1))
         train_data = train_data
         correct = 0
@@ -157,6 +158,7 @@ if __name__ == "__main__":
         print("Training completed for epoch {}".format(epoch + 1))
         print("Training accuracy for epoch {}: {}".format(epoch + 1, correct / total))
         print("Training loss for epoch {}: {}".format(epoch + 1, loss))
+        print("Training time for this epoch: {}".format(time.time() - start_time))
         trainning_accuracy = correct/total
 
 
@@ -164,6 +166,7 @@ if __name__ == "__main__":
         correct = 0
         total = 0
         random.shuffle(valid_data)
+        start_time = time.time()
         print("Validation started for epoch {}".format(epoch + 1))
         valid_data = valid_data
 
@@ -182,6 +185,7 @@ if __name__ == "__main__":
         print("Validation completed for epoch {}".format(epoch + 1))
         print("Validation accuracy for epoch {}: {}".format(epoch + 1, correct / total))
         print("Validation loss for epoch {}: {}".format(epoch + 1, loss))
+        print("Validation time for this epoch: {}".format(time.time() - start_time))
         validation_accuracy = correct/total
 
         if validation_accuracy < last_validation_accuracy and trainning_accuracy > last_train_accuracy:
@@ -200,6 +204,7 @@ if __name__ == "__main__":
     correct = 0
     total = 0
     random.shuffle(test_data)
+    start_time = time.time()
 
     for input_words, gold_label in tqdm(test_data):
         input_words = " ".join(input_words)
@@ -215,6 +220,7 @@ if __name__ == "__main__":
         # print(predicted_label, gold_label)
     print("Testing completed")
     print("Testing accuracy: {}".format(correct / total))
+    print("Testing time: {}".format(time.time() - start_time))
 
 
     # You may find it beneficial to keep track of training accuracy or training loss;
